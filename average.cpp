@@ -15,8 +15,8 @@ ifstream average::add_file(string& filename) {
 			cout << "Logical error on i/o operation, ";
 		if (r == ifstream::eofbit)
 			cout <<	"End-of-file reached on input, ";
-		cout << "can't open file \""
-			 << filename << "\"" << endl;
+		cout << "can't open file \"" <<
+			filename << "\"" << endl;
 		fin.close();
 		throw r;
 	}
