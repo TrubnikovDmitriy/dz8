@@ -12,10 +12,10 @@ class average {
 
 	public:
 		average(string& word_): word(word_),
-					all_words(0.0f),
+					all_words(0),
 					all_files(0) {}
 		average(char* word_): 	word(word_), 
-					all_words(0.0f),
+					all_words(0),
 					all_files(0) {}
 
 		void operator()(string& filename);
@@ -24,7 +24,7 @@ class average {
 
 	private:
 		string word;
-		float all_words;
+		int all_words;
 		int all_files;
 
 		void count_from_file(ifstream& fin);
