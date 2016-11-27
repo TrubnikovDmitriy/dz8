@@ -32,8 +32,9 @@ void average::count_from_file(ifstream& fin) {
 
 	while (getline(fin, str)) {
 		boost::split(vec, str,
-					 boost::is_any_of("/?!:;., \t"));
-		all_words += (float)count(vec.begin(), vec.end(), word);
+					 boost::is_any_of("/?!:;., \t"),
+					 boost::token_compress_on);
+		all_words += count(vec.begin(), vec.end(), word);
 	}
 }
 
@@ -58,12 +59,12 @@ float average::get_average() {
 		return all_files;
 	}
 	
-	return (all_words / all_files);
+	return ((float)all_words / all_files);
 
 }
 
 void average::clear() {
 
-	all_words = 0.0f;
+	all_words = 0;
 	all_files = 0;
 }
