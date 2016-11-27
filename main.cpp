@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
 	average av(argv[1]);
 	vector<string> filenames(argv + 2, argv + argc);
 	for_each(filenames.begin(), filenames.end(), av);
-	
+
 //	for (auto& i : filenames) av(i);
 	
 	cout << "Avearage: " << av.get_average() << endl;

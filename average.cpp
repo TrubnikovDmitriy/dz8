@@ -15,8 +15,8 @@ ifstream average::add_file(string& filename) {
 			cout << "Logical error on i/o operation, ";
 		if (r == ifstream::eofbit)
 			cout <<	"End-of-file reached on input, ";
-		cout << "can't open file \"" <<
-			filename << "\"" << endl;
+		cout << "can't open file \""
+			 << filename << "\"" << endl;
 		fin.close();
 		throw r;
 	}
@@ -32,7 +32,7 @@ void average::count_from_file(ifstream& fin) {
 
 	while (getline(fin, str)) {
 		boost::split(vec, str,
-					 boost::is_any_of("/?!:;., \t"),
+					 boost::is_any_of("/?!:;., \t"), 
 					 boost::token_compress_on);
 		all_words += count(vec.begin(), vec.end(), word);
 	}

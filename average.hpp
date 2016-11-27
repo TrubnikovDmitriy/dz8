@@ -12,11 +12,11 @@ class average {
 
 	public:
 		average(string& word_): word(word_),
-					all_words(0),
-					all_files(0) {}
+								all_words(0),
+								all_files(0) {}
 		average(char* word_): 	word(word_), 
-					all_words(0),
-					all_files(0) {}
+								all_words(0),
+								all_files(0) {}
 
 		void operator()(string& filename);
 		float get_average();
